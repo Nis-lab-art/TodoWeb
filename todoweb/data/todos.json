@@ -1,0 +1,24 @@
+{
+  "tasks": [
+    {
+      "id": "2",
+      "task": "go to market"
+    },
+    {
+      "id": "3",
+      "task": "take a bath"
+    },
+    {
+      "id": "029bf3c7-e5ec-426e-8696-5a959a6e41d4",
+      "task": "buy new phone"
+    },
+    {
+      "id": "73bb2d30-cc4d-4bcc-99e1-b20059cf1b1d",
+      "task": "go for a walk"
+    },
+    {
+      "id": "a7eda73c-266e-4874-9756-89ee0b99650e",
+      "task": "wake up early"
+    }
+  ]
+}

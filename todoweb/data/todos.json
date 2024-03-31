@@ -2,23 +2,37 @@
   "tasks": [
     {
       "id": "2",
-      "task": "go to market"
+      "task": "go to market",
+      "done": false
     },
     {
       "id": "3",
-      "task": "take a bath"
+      "task": "take a bath",
+      "done": true
     },
     {
       "id": "029bf3c7-e5ec-426e-8696-5a959a6e41d4",
-      "task": "buy new phone"
+      "task": "buy new phone",
+      "done": false
     },
     {
       "id": "73bb2d30-cc4d-4bcc-99e1-b20059cf1b1d",
-      "task": "go for a walk"
+      "task": "go for a walk",
+      "done": true
     },
     {
       "id": "a7eda73c-266e-4874-9756-89ee0b99650e",
-      "task": "wake up early"
+      "task": "wake up early",
+      "done": true
+    },
+    {
+      "id": "1000890e-f20d-4e0e-a99a-e5aa22f2b88f",
+      "task": "take a rest"
+    },
+    {
+      "id": "63a3075c-ef86-4d24-8b67-c29a5612e169",
+      "task": "have a tea break",
+      "done": false
     }
   ]
 }

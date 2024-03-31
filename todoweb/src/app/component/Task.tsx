@@ -2,11 +2,11 @@
 
 import { ITask } from "../../../types/tasks";
 import { FaEdit } from "react-icons/fa";
-import { MdDelete } from "react-icons/md";
+import { MdDelete, MdCheckBoxOutlineBlank, MdCheckBox } from "react-icons/md";
 import Modal from "./Modal";
 import { FormEventHandler, useState } from "react";
 import { useRouter } from "next/navigation";
-import { editTodo, deleteTodo } from "../../../api";
+import { editTodo, deleteTodo, editDoneTodo } from "../../../api";
 
 interface TaskProps {
     task: ITask
@@ -16,6 +16,7 @@ const Task: React.FC<TaskProps> = ({ task }) => {
     const[editModalOpen, setEditModalOpen] = useState(false);
     const[deleteModalOpen, setDeleteModalOpen] = useState(false);
     const[editedValue, setEditedValue] = useState(task.task);
+    const[done, setDone] = useState(task.done);
     const router = useRouter();
 
     const handleEdit: FormEventHandler<HTMLFormElement> = async (e) => {
@@ -23,6 +24,7 @@ const Task: React.FC<TaskProps> = ({ task }) => {
         await editTodo({
             id: task.id,
             task: editedValue,
+            done: done,
         })
         setEditModalOpen(false);
         router.refresh();
@@ -34,9 +36,19 @@ const Task: React.FC<TaskProps> = ({ task }) => {
         router.refresh();
     }
 
+    const handleDone = async (value: boolean) => {
+    setDone(value);
+    editDoneTodo({
+        id: task.id,
+        task: editedValue,
+        done: value,
+    })
+    router.refresh();
+    }
+
     return (
         <tr key={task.id}>
-            <td className="w-full">{task.task}</td>
+            <td className={`w-full text-base capitalize font-medium ${task.done ? "line-through" : ""}`}>{task.task}</td>
             <td className="flex gap-5">
                 <FaEdit onClick={() => setEditModalOpen(true)} cursor="pointer" className="text-blue-500" size={20}/>
                     <Modal modalOpen={editModalOpen} setModalOpen={setEditModalOpen}>
@@ -57,6 +69,11 @@ const Task: React.FC<TaskProps> = ({ task }) => {
                             </button>
                         </div>
                     </Modal>
+                {
+                    done ? <MdCheckBox onClick={() => handleDone(false)} cursor="pointer" size={22} />
+                    :
+                    <MdCheckBoxOutlineBlank onClick={() => handleDone(true)} cursor="pointer" size={22}/>
+                }
             </td>
         </tr>
     );

@@ -25,7 +25,7 @@ const AddTask = () => {
     }
     return (
         <div>
-            <button onClick={() => setModalOpen(true)} className="btn btn-primary w-full font-bold">Add Task
+            <button onClick={() => setModalOpen(true)} className="btn w-full font-bold">Add Task
             <IoIosAddCircle size={16} className="ml-1"/>
             </button>
             <Modal modalOpen={modalOpen} setModalOpen={setModalOpen}>

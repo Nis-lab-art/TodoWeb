@@ -50,7 +50,7 @@ const Task: React.FC<TaskProps> = ({ task }) => {
         <tr key={task.id}>
             <td className={`w-full text-base capitalize font-medium ${task.done ? "line-through" : ""}`}>{task.task}</td>
             <td className="flex gap-5">
-                <FaEdit onClick={() => setEditModalOpen(true)} cursor="pointer" className="text-blue-500" size={20}/>
+                <FaEdit onClick={() => setEditModalOpen(true)} cursor="pointer" size={20}/>
                     <Modal modalOpen={editModalOpen} setModalOpen={setEditModalOpen}>
                         <form onSubmit={handleEdit}>
                             <h3 className="font-bold text-lg">Edit Todo</h3>
@@ -60,7 +60,7 @@ const Task: React.FC<TaskProps> = ({ task }) => {
                             </div>
                         </form>
                     </Modal>
-                <MdDelete onClick={() => setDeleteModalOpen(true)} cursor="pointer" className="text-red-500" size={20} />
+                <MdDelete onClick={() => setDeleteModalOpen(true)} cursor="pointer" size={20} />
                     <Modal modalOpen={deleteModalOpen} setModalOpen={setDeleteModalOpen}>
                         <h3 className="text-lg">Are you sure you want to delete?</h3>
                         <div className="modal-action">

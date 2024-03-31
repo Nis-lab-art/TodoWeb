@@ -20,7 +20,7 @@ const CurrentTime: React.FC = () => {
     <div className="grid grid-flow-col gap-5 text-center auto-cols-max">
         <div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
             <span className="countdown font-mono text-4xl">
-            <span style={{ '--value': currentTime.getHours() }}>
+            <span style={{ '--value' : currentTime.getHours() } as any}>
                 {formatTimeUnit(currentTime.getHours())}
             </span>
             </span>
@@ -28,7 +28,7 @@ const CurrentTime: React.FC = () => {
         </div>
         <div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
             <span className="countdown font-mono text-4xl">
-            <span style={{ '--value': currentTime.getMinutes() }}>
+            <span style={{ '--value' : currentTime.getMinutes() } as any}>
                 {formatTimeUnit(currentTime.getMinutes())}
             </span>
             </span>
@@ -36,7 +36,7 @@ const CurrentTime: React.FC = () => {
         </div>
         <div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
             <span className="countdown font-mono text-4xl">
-            <span style={{ '--value': currentTime.getSeconds() }}>
+            <span style={{ '--value' : currentTime.getSeconds() } as any}>
                 {formatTimeUnit(currentTime.getSeconds())}
             </span>
             </span>

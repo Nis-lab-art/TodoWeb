@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import { ThemeContext } from "./context/ThemeController";
 
 const Navbar = () => {
-    const { theme, changeTheme } = useContext(ThemeContext);
+    const { theme, changeTheme }: any = useContext(ThemeContext);
     const handleThemeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const newTheme = e.target.checked ? "dark" : "light";
         changeTheme(newTheme);

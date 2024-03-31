@@ -17,6 +17,7 @@ const AddTask = () => {
         await addTodo({
             id: uuidv4(),
             task: newTask,
+            done: false,
         })
         setNewTask("");
         setModalOpen(false);
@@ -24,8 +25,8 @@ const AddTask = () => {
     }
     return (
         <div>
-            <button onClick={() => setModalOpen(true)} className="btn btn-primary w-full">Add Task
-            <IoIosAddCircle size={16} className="ml-2"/>
+            <button onClick={() => setModalOpen(true)} className="btn w-full font-bold">Add Task
+            <IoIosAddCircle size={16} className="ml-1"/>
             </button>
             <Modal modalOpen={modalOpen} setModalOpen={setModalOpen}>
                 <form onSubmit={handleSubmit}>

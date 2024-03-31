@@ -47,24 +47,22 @@ const Task: React.FC<TaskProps> = ({ task }) => {
     }
 
     return (
-        <tr key={task.id}>
-            <td className={`w-full text-base capitalize font-medium ${task.done ? "line-through" : ""}`}>{task.task}</td>
-            <td className="flex gap-5">
+        <div className="flex items-center space-x-2">
                 <FaEdit onClick={() => setEditModalOpen(true)} cursor="pointer" size={20}/>
                     <Modal modalOpen={editModalOpen} setModalOpen={setEditModalOpen}>
                         <form onSubmit={handleEdit}>
                             <h3 className="font-bold text-lg">Edit Todo</h3>
                             <div className="modal-action">
                                 <input value={editedValue} onChange={(e) => setEditedValue(e.target.value)} type="text" placeholder="Type here" className="input input-bordered w-full max-w-xs" />
-                                <button type="submit" className="btn">Submit</button>
+                                <button type="submit" className="btn bg-neutral text-neutral-content">Submit</button>
                             </div>
                         </form>
                     </Modal>
                 <MdDelete onClick={() => setDeleteModalOpen(true)} cursor="pointer" size={20} />
                     <Modal modalOpen={deleteModalOpen} setModalOpen={setDeleteModalOpen}>
-                        <h3 className="text-lg">Are you sure you want to delete?</h3>
+                        <h3 className="font-medium">Are you sure you want to delete?</h3>
                         <div className="modal-action">
-                            <button onClick={() => handleDelete(task.id)} className="btn">
+                            <button onClick={() => handleDelete(task.id)} className="btn bg-neutral text-neutral-content">
                                 YES
                             </button>
                         </div>
@@ -74,8 +72,7 @@ const Task: React.FC<TaskProps> = ({ task }) => {
                     :
                     <MdCheckBoxOutlineBlank onClick={() => handleDone(true)} cursor="pointer" size={22}/>
                 }
-            </td>
-        </tr>
+         </div>
     );
 }
  

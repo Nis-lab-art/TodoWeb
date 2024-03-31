@@ -8,20 +8,17 @@ interface TodoListProps {
 
 const TaskList: React.FC<TodoListProps> = ({ tasks }) => {
     return (
-        <div className="overflow-x-auto">
-            <table className="table">
-            <thead>
-                <tr>
-                    <td>Tasks</td>
-                    <td>Actions</td>
-                </tr>
-            </thead>
-                <tbody>
-                {tasks.map((task) => (
-                    <Task key={task.id} task={task}/>
-                ))}
-                </tbody>
-            </table>
+        <div className="grid grid-cols-2 gap-y-1">
+            {tasks.map(( task ) => (
+                <div key={task.id} className="card w-96 bg-neutral text-neutral-content">
+                    <div className="card-body">
+                        <h2 className={`card-title w-full text-base capitalize font-medium ${task.done ? "line-through" : ""}`}>{task.task}</h2>
+                        <div className="card-actions justify-end">
+                            <Task task={task}/>
+                        </div>
+                    </div>
+                </div>
+            ))}
         </div>
     );
 }

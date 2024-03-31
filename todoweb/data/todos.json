@@ -33,6 +33,11 @@
       "id": "63a3075c-ef86-4d24-8b67-c29a5612e169",
       "task": "have a tea break",
       "done": false
+    },
+    {
+      "id": "60db7ccd-e831-4ada-b574-6312966e3a61",
+      "task": "Buy a new phone",
+      "done": false
     }
   ]
 }

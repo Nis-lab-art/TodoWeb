@@ -24,20 +24,22 @@ const AddTask = () => {
         router.refresh();
     }
     return (
-        <div>
-            <button onClick={() => setModalOpen(true)} className="btn w-full font-bold">Add Task
-            <IoIosAddCircle size={16} className="ml-1"/>
-            </button>
-            <Modal modalOpen={modalOpen} setModalOpen={setModalOpen}>
-                <form onSubmit={handleSubmit}>
-                    <h3 className="font-bold text-lg">Add Todo</h3>
-                    <div className="modal-action">
-                        <input value={newTask} onChange={(e) => setNewTask(e.target.value)} type="text" placeholder="Type here" className="input input-bordered w-full max-w-xs" />
-                        <button type="submit" className="btn">Submit</button>
-                    </div>
-                </form>
-            </Modal>
-        </div> 
+        <>
+            <div className="flex justify-start top-0 left-0">
+                <IoIosAddCircle onClick={() => setModalOpen(true)}  size={50}/>
+            </div>
+            <div>
+                <Modal modalOpen={modalOpen} setModalOpen={setModalOpen}>
+                    <form onSubmit={handleSubmit}>
+                        <h3 className="font-bold text-lg">Add Todo</h3>
+                        <div className="modal-action">
+                            <input value={newTask} onChange={(e) => setNewTask(e.target.value)} type="text" placeholder="Type here" className="input input-bordered w-full max-w-xs" />
+                            <button type="submit" className="btn bg-neutral text-neutral-content">Submit</button>
+                        </div>
+                    </form>
+                </Modal>
+            </div> 
+        </>
     );
 }
  
